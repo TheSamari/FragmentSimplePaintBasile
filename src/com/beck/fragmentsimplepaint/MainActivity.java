@@ -2,17 +2,12 @@ package com.beck.fragmentsimplepaint;
 
 
 
+import java.util.Random;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -38,11 +33,42 @@ public class MainActivity extends ActionBarActivity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		switch (item.getItemId()) {
+        case R.id.plus:
+        	GetterSetter.size = GetterSetter.size + 10;
+            return true;
+        
+        case R.id.minus:
+        	GetterSetter.size = GetterSetter.size - 10;
+            return true;
+            
+        case R.id.red:
+        	GetterSetter.blue = 0;
+        	GetterSetter.green = 0;
+        	GetterSetter.red = 255;
+            return true;
+            
+        case R.id.blue:
+        	GetterSetter.red = 0;
+        	GetterSetter.green = 0;
+        	GetterSetter.blue = 255;
+            return true;
+            
+        case R.id.green:
+        	GetterSetter.red = 0;
+        	GetterSetter.blue = 0;
+        	GetterSetter.green = 255;
+            return true;
+            
+        //case R.id.random:
+        	//final Random rnd = new Random();
+        	//int x = rnd(256);
+        	//int y = rnd(256);
+        	//int z = rnd(256);
+            //return true;
+        default:
+            return super.onOptionsItemSelected(item);
 		}
-		return super.onOptionsItemSelected(item);
 	}
 }
 	/**

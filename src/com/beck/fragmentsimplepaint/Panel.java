@@ -37,9 +37,9 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	@Override
 	public void onDraw(Canvas canvas) {
 	
-		paint.setARGB(255, 255, 0, 0);
-		//canvas.drawColor(Color.BLACK);
-		canvas.drawCircle(200f, 200f, 30, paint);
+		paint.setARGB(255, GetterSetter.red, GetterSetter.blue, GetterSetter.green);
+		canvas.drawColor(Color.BLACK);
+		canvas.drawCircle(200f, 200f, GetterSetter.size, paint);
 	
 		
 		
